@@ -1,0 +1,262 @@
+/* pages/ReservationsPage.css */
+.reservations-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920');
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0 80px;
+  text-align: center;
+}
+
+.reservations-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.reservations-hero p {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.reservations-container {
+  padding: 80px 0;
+}
+
+.reservations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.reservation-info h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.reservation-info > p {
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateX(5px);
+}
+
+.info-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.info-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #c9a03d;
+}
+
+.info-card p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.reservation-form-container {
+  background: rgba(255,255,255,0.03);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.reservation-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #c9a03d;
+  background: rgba(255,255,255,0.12);
+}
+
+.form-input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+/* Fix for select dropdown text color */
+select.form-input {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+select.form-input option {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 10px;
+}
+
+/* Fix for select dropdown when opened */
+select.form-input option:hover,
+select.form-input option:focus,
+select.form-input option:checked {
+  background-color: #c9a03d;
+  color: #000000;
+}
+
+/* Date input styling */
+input[type="date"].form-input {
+  color: #ffffff;
+}
+
+input[type="date"].form-input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+textarea.form-input {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.login-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.login-note a {
+  color: #c9a03d;
+  text-decoration: underline;
+}
+
+.success-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  animation: slideInRight 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.success-toast span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: #c9a03d;
+  color: #000000;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #b58b2f;
+  transform: translateY(-2px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 968px) {
+  .reservations-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .reservations-hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.5s ease;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.5s ease;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

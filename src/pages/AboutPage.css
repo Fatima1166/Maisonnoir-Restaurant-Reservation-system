@@ -1,0 +1,165 @@
+/* pages/AboutPage.css */
+.about-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920');
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0 80px;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.about-container {
+  padding: 80px 5%;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-text h3 {
+  font-size: 1.3rem;
+  color: #c9a03d;
+  margin-bottom: 25px;
+}
+
+.about-text p {
+  line-height: 1.8;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+}
+
+.about-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.about-stats div {
+  text-align: center;
+}
+
+.about-stats .stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c9a03d;
+}
+
+.about-stats .stat-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.philosophy-section {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.philosophy-section h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.philosophy-card {
+  background: rgba(255,255,255,0.03);
+  padding: 40px 30px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.philosophy-card:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-5px);
+}
+
+.philosophy-card span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.philosophy-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.philosophy-card p {
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+.vision-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 24px;
+  padding: 50px;
+}
+
+.vision-image img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.vision-info h2 {
+  font-size: 1.5rem;
+  color: #c9a03d;
+  margin-bottom: 10px;
+}
+
+.vision-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.vision-info p {
+  line-height: 1.8;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .vision-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,403 @@
+/* pages/AdminMenu.css */
+.admin-menu {
+  animation: fadeIn 0.5s ease;
+  padding: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.menu-header h2 {
+  font-size: 1.5rem;
+}
+
+.menu-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.menu-item-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-item-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.05);
+}
+
+.menu-item-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-item-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-item-card:hover .menu-item-actions {
+  opacity: 1;
+}
+
+.action-edit, .action-delete {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-edit {
+  background: rgba(33,150,243,0.9);
+  color: white;
+}
+
+.action-edit:hover {
+  background: #2196f3;
+}
+
+.action-delete {
+  background: rgba(255,107,107,0.9);
+  color: white;
+}
+
+.action-delete:hover {
+  background: #ff6b6b;
+}
+
+.menu-item-info {
+  padding: 15px;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.menu-item-header h3 {
+  font-size: 1.1rem;
+}
+
+.menu-item-price {
+  font-weight: 700;
+  color: #c9a03d;
+}
+
+.menu-item-info p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.menu-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.category-badge {
+  background: rgba(201,160,61,0.2);
+  color: #c9a03d;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.availability-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.availability-toggle input {
+  display: none;
+}
+
+.toggle-slider {
+  width: 36px;
+  height: 18px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all 0.2s ease;
+}
+
+.availability-toggle input:checked + .toggle-slider {
+  background: #c9a03d;
+}
+
+.availability-toggle input:checked + .toggle-slider::before {
+  transform: translateX(18px);
+}
+
+.toggle-label {
+  color: rgba(255,255,255,0.7);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.admin-modal-content {
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 550px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: scaleIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.modal-header h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #c9a03d;
+  background: rgba(255,255,255,0.08);
+}
+
+/* Fix for select dropdown in admin form */
+select.form-input {
+  color: #ffffff;
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.05);
+}
+
+select.form-input option {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 10px;
+}
+
+/* Style for select dropdown options when opened */
+select.form-input optgroup,
+select.form-input option {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+/* Hover and selected states for options */
+select.form-input option:hover,
+select.form-input option:focus,
+select.form-input option:checked,
+select.form-input option:active {
+  background-color: #c9a03d !important;
+  color: #000000 !important;
+}
+
+/* For Firefox */
+select.form-input:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #ffffff;
+}
+
+select.form-input:focus option:checked {
+  background-color: #c9a03d;
+  color: #000000;
+}
+
+textarea.form-input {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 0;
+  color: rgba(255,255,255,0.9);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #c9a03d;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #c9a03d;
+  color: #0a0a0a;
+}
+
+.btn-primary:hover {
+  background: #b88a2a;
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-items-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-modal-content {
+    padding: 20px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
